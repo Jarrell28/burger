@@ -20,8 +20,8 @@
                     <ol class="list-group m-0 p-0">
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <li class="list-group-item d-flex justify-content-between">{{ burger_name}} <a href=""
-                                data-id={{ id }}>X</a>
+                        <li class="list-group-item d-flex justify-content-between">{{ burger_name}} <span
+                                class="remove btn btn-outline-dark btn-sm" data-id={{ id }}>Devour!</span>
                         </li>
                         {{/unless}}
                         {{/each}}

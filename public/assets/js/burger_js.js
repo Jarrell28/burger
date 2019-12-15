@@ -7,3 +7,17 @@ $("#submit").on("click", function (e) {
         location.reload();
     })
 })
+
+$(".remove").on("click", function (e) {
+    var id = $(this).attr("data-id");
+
+
+    $.ajax({
+        method: "PUT",
+        url: "/api/burgers/" + id,
+        data: id
+    }).done(function (data) {
+        location.reload();
+    })
+
+})
