@@ -1,1 +1,57 @@
-some stuff
+<div class="container">
+    <h1 class="text-center text-white py-4">EAT DA BURGER!</h1>
+    <p class="text-center"><img src="/assets/img/burger.png" alt=""></p>
+
+    <form action="" class="form-inline">
+        <div class="w-50 d-block m-auto">
+            <input type="text" class="form-control w-75" placeholder="Enter Burger Name" id="burger_name">
+            <input type="submit" value="Submit" class="btn btn-outline-light" id="submit">
+        </div>
+
+    </form>
+
+    <div class="row justify-content-between mt-4">
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-header">
+                    Burgers to Eat
+                </div>
+                <div class="card-body p-0">
+                    <ol class="list-group m-0 p-0">
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        <li class="list-group-item d-flex justify-content-between">{{ burger_name}} <a href=""
+                                data-id={{ id }}>X</a>
+                        </li>
+                        {{/unless}}
+                        {{/each}}
+
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-header">
+                    Burgers Devoured
+                </div>
+                <div class="card-body p-0">
+                    <ol class="list-group m-0 p-0">
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <li class="list-group-item d-flex justify-content-between">{{ burger_name}}
+                        </li>
+                        {{/if}}
+                        {{/each}}
+
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
